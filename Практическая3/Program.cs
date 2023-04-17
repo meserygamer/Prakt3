@@ -120,6 +120,7 @@ namespace Практическая3
             PersonFromFile Res = data.MaxBy(a => a.Age);
             Console.WriteLine("Человек с максимальным возрастом:");
             Console.WriteLine($"|{Res.Surname}\t | {Res.Name}\t | {Res.Telephon}\t | {Res.Age}\t | {Res.Pol}\t");
+            File.AppendAllText("PersonWithMaxAge.csv", $"{Res.Surname};{Res.Name};{Res.Telephon};{Res.Age};{Res.Pol}\n");
         }
         public static void AllWoman(List<PersonFromFile> data)
         {
@@ -128,6 +129,7 @@ namespace Практическая3
             foreach(var Res in Resuslt)
             {
                 Console.WriteLine($"|{Res.Surname}\t | {Res.Name}\t | {Res.Telephon}\t | {Res.Age}\t | {Res.Pol}\t");
+                File.AppendAllText("AllWoman.csv", $"{Res.Surname};{Res.Name};{Res.Telephon};{Res.Age};{Res.Pol}\n");
             }
         }
         public static void FirstManWithNameBeginningA(List<PersonFromFile> data)
@@ -135,6 +137,7 @@ namespace Практическая3
             PersonFromFile Res = data.Where(a => a.Pol == "мужской" && a.Name[0] == 'А').First();
             Console.WriteLine("Первый мужчина с именем на А:");
             Console.WriteLine($"|{Res.Surname}\t | {Res.Name}\t | {Res.Telephon}\t | {Res.Age}\t | {Res.Pol}\t");
+            File.AppendAllText("FirstManWithNameBeginningA.csv", $"{Res.Surname};{Res.Name};{Res.Telephon};{Res.Age};{Res.Pol}\n");
         }
         public static void HumansWithFamily6len(List<PersonFromFile> data)
         {
@@ -143,6 +146,7 @@ namespace Практическая3
             foreach (var Res in Resuslt)
             {
                 Console.WriteLine($"|{Res.Surname}\t | {Res.Name}\t | {Res.Telephon}\t | {Res.Age}\t | {Res.Pol}\t");
+                File.AppendAllText("HumansWithFamily6len.csv", $"{Res.Surname};{Res.Name};{Res.Telephon};{Res.Age};{Res.Pol}\n");
             }
         }
         public static void FirstHumanWithTelEndOn9(List<PersonFromFile> data)
@@ -150,6 +154,7 @@ namespace Практическая3
             PersonFromFile Res = data.FindAll(a => a.Telephon[14] == '9').First();
             Console.WriteLine("Первый человек с телефон заканчивающимся на 9:");
             Console.WriteLine($"|{Res.Surname}\t | {Res.Name}\t | {Res.Telephon}\t | {Res.Age}\t | {Res.Pol}\t");
+            File.AppendAllText("FirstHumanWithTelEndOn9.csv", $"{Res.Surname};{Res.Name};{Res.Telephon};{Res.Age};{Res.Pol}\n");
         }
         public static void OrderBY(List<PersonFromFile> data)
         {
@@ -158,6 +163,7 @@ namespace Практическая3
             foreach (var Res in Resuslt)
             {
                 Console.WriteLine($"|{Res.Surname}\t | {Res.Name}\t | {Res.Telephon}\t | {Res.Age}\t | {Res.Pol}\t");
+                File.AppendAllText("Sorting.csv", $"{Res.Surname};{Res.Name};{Res.Telephon};{Res.Age};{Res.Pol}\n");
             }
         }
     }
